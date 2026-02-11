@@ -1,0 +1,19 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - hubspotAccessToken
+    properties:
+      hubspotAccessToken:
+        type: string
+        title: "HubSpot Access Token"
+        description: "Your HubSpot Private App access token. Get it from https://developers.hubspot.com/docs/api/private-apps"
+  commandFunction: |
+    (config) => ({
+      command: 'node',
+      args: ['dist/index.js'],
+      env: {
+        HUBSPOT_ACCESS_TOKEN: config.hubspotAccessToken
+      }
+    })
