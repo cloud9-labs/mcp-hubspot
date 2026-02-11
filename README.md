@@ -31,6 +31,12 @@ A Model Context Protocol (MCP) server that provides AI assistants with full acce
 | `hubspot_get_pipelines` | Get all deal pipelines and stages |
 | `hubspot_create_association` | Associate CRM objects together |
 
+## Quick Start
+
+```bash
+npx @cloud9-labs/mcp-hubspot
+```
+
 ## Prerequisites
 
 - Node.js >= 20.0.0
@@ -45,17 +51,17 @@ Your Private App needs these scopes:
 
 ## Installation
 
-### Via Smithery
+### Via npm (Recommended)
 
 ```bash
-npx -y @smithery/cli install @anthropic/hubspot-mcp --client claude
+npm install @cloud9-labs/mcp-hubspot
 ```
 
-### Manual Setup
+### From Source
 
 ```bash
-git clone https://github.com/A5O1/new_work.git
-cd new_work/packages/mcp-hubspot
+git clone https://github.com/cloud9-labs/mcp-hubspot.git
+cd mcp-hubspot
 npm install
 npm run build
 ```
@@ -70,8 +76,8 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 {
   "mcpServers": {
     "hubspot": {
-      "command": "node",
-      "args": ["/path/to/mcp-hubspot/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "@cloud9-labs/mcp-hubspot"],
       "env": {
         "HUBSPOT_ACCESS_TOKEN": "your-access-token-here"
       }
@@ -88,8 +94,8 @@ Add to `.cursor/mcp.json`:
 {
   "mcpServers": {
     "hubspot": {
-      "command": "node",
-      "args": ["/path/to/mcp-hubspot/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "@cloud9-labs/mcp-hubspot"],
       "env": {
         "HUBSPOT_ACCESS_TOKEN": "your-access-token-here"
       }
@@ -131,6 +137,15 @@ Example: Search contacts where lifecycle stage equals "lead":
   ]
 }
 ```
+
+## Building an AI Sales Automation System?
+
+This MCP server is part of an open-source toolkit for AI-powered sales automation. We're building MCP servers that connect your entire sales stack — CRM, email, scheduling, lead scoring, and more.
+
+Follow our progress and get updates:
+
+- **X (Twitter)**: [@cloud9_ai_labs](https://x.com/cloud9_ai_labs)
+- **GitHub**: [cloud9-labs](https://github.com/cloud9-labs)
 
 ## License
 
